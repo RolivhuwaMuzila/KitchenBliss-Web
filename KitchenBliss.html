@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Furniture Website</title>
+    <!--Link To Css-->
+    <link rel="stylesheet" href="style.css">
+    <!--Box Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <style>
+        /* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --text-color: #000000;
+  --main-color: rgb(241, 11, 50);
+}
+section {
+  padding: 50px 10%;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 100px;
+  background: #edecea;
+}
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.logo span {
+  color: var(--main-color);
+}
+.navbar {
+  position: relative;
+  display: flex;
+}
+.navbar a {
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.navbar a:hover {
+  color: var(--main-color);
+}
+#menu-icon {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+}
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(C:/Users/Rolly/Desktop/utensils/Capture15.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+}
+.home-text h1 {
+  font-size: 2.7rem;
+}
+.home-text p {
+  font-size: 0.938rem;
+  margin: 0.4rem 0 1.8rem;
+}
+.home-text span {
+  color: var(--main-color);
+}
+.btn {
+  padding: 10px 14px;
+  background: var(--main-color);
+  color: #fff;
+  border-radius: 0.3rem;
+  font-size: 14px;
+}
+.btn:hover {
+  background: #8fc53d;
+}
+.heading {
+  text-align: center;
+}
+.heading span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--main-color);
+  text-transform: uppercase;
+}
+.shop-container,
+.new-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.box {
+  position: relative;
+  box-shadow: 1px 4px 4px rgb(0, 0, 0, 0.1);
+  border-radius: 44px 4px 4px 4px;
+}
+.box .box-img {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 44px 4px 0 0;
+}
+.box .box-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.box .box-img img:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.title-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+}
+.title-price h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.box span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-left: 12px;
+  color: var(--main-color);
+}
+.stars .bx {
+  color: var(--main-color);
+}
+.box .bx-cart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 7px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 4px 0 4px 0;
+  background: var(--main-color);
+}
+.box .bx-cart:hover {
+  background: #8fc53d;
+}
+.new-container .box {
+  border-radius: 4px;
+}
+.new-container .box .box-img {
+  border-radius: 4px;
+}
+.about {
+  text-align: center;
+}
+
+.about-text span {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+.about-text p {
+  font-size: 0.938rem;
+  margin: 0.5rem 0 1.4rem;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(C:/Users/Rolly/Desktop/utensils/Capture18.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.newsletter h2 {
+  color: #fff;
+}
+.news-box {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+.news-box input {
+  width: 260px;
+  height: 44px;
+  border: none;
+  outline: none;
+  background: #fff;
+  padding: 10px;
+}
+.news-box .btn {
+  height: 44px;
+  padding: 11px;
+  border-radius: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+  gap: 1rem;
+}
+.footer-box h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.footer-box span {
+  color: var(--main-color);
+}
+.footer-box p {
+  font-size: 00.938rem;
+  margin-bottom: 10px;
+}
+.social {
+  display: flex;
+  align-items: center;
+}
+.social a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: var(--text-color);
+}
+.social a:hover {
+  color: var(--main-color);
+}
+.footer-box h3 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.footer-box li a {
+  color: var(--text-color);
+}
+.footer-box li a:hover {
+  color: var(--main-color);
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+.contact-info span {
+  color: var(--text-color);
+}
+.copyright {
+  padding: 20px;
+  text-align: center;
+}
+/* Making Responsive */
+@media (max-width: 991px) {
+  header {
+    padding: 18px 4%;
+  }
+  section {
+    padding: 50px 4%;
+  }
+}
+@media (max-width: 881px) {
+  .home-text h1 {
+    font-size: 2rem;
+  }
+  .shop-container,
+  .new-container {
+    grid-template-columns: repeat(auto-fit, minmax(218px, auto));
+  }
+}
+@media (max-width: 768px) {
+  header {
+    padding: 11px 4%;
+  }
+  #menu-icon {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 4px 4px rgb(0 0 0 /10%);
+    transition: 0.2s ease;
+    text-align: center;
+  }
+  .navbar a {
+    padding: 1.5rem;
+    display: block;
+  }
+  .navbar.active {
+    top: 100%;
+  }
+  .navbar a:hover {
+    color: #fff;
+    background: var(--main-color);
+  }
+  .about{
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .box-img{
+    padding: 1rem;
+    order: 2;
+  }
+}
+
+@media (max-width: 491px){
+    .home-text h1{
+        font-size: 1.7rem;
+    }
+    .shop-container,
+    .new-container {
+      grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    }
+    .box .box-img{
+        height: 300px;
+    }
+    .news-box input{
+        width: 180px;
+    }
+    .about-text h2{
+        font-size: 1.2rem;
+    }
+}
+    </style>
+</head>
+<body>
+    <!--Navbar-->
+    <header>
+        <a href="#" class="logo">Kitchen<span>Bliss</span></a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">shop</a></li>
+            <li><a href="#new">New Arrival</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#delivery">Delivery </a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <!--Home-->
+    <section class="home" id="home">
+        <div class="home-text">
+        <h1><Span> Be </Span> inlove <br> with your <span> Kitchen </span></h1>
+        <p>Elevate your culinary prowess with our handpicked selection of kitchen essentials, meticulously curated to enhance every aspect of your cooking experience. From precision fancy dinnersets to versatile cookware,  <br> we're here to empower your culinary journey with quality tools and timeless style.</p>
+        <a href="#shop" class="btn">Buy Now</a>
+        </div>
+    </section>
+<!--shop-->
+<section class="shop" id="shop">
+    <div class="heading">
+        <span>New Arrival</span>
+        <h2>Shop Now</h2>
+    </div>
+    <!-- Content -->
+    <div class="shop-container">
+        <!--Box 1-->
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture 1.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Fancy Wine glasses</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R100.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+         <!--Box 2-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture3.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Wisky/juice glasses</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R150.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 3-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture4.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Tea cups</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R180.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 4-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture5.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Glossy tea cups</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R200.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 5-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture6.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Dinner set</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R400.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 6-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture7.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Dinner set</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R500.00 per set of 6</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+        </div>
+    </section>
+
+<!--New Arrival-->
+<section class="new" id="new">
+    <div class="heading">
+        <span>New Collection</span>
+        <h2>Best sellings</h2>
+    </div>
+    <!--content-->
+    <div class="new-container">
+           <!--Box 1-->
+
+           <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture8.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Cookware</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R2 000.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+          <!--Box 2-->
+
+          <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture9.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Cookware</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R1 500.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 3-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture11.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Graphite Bread Bin</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R300.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+        <!--Box 3-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture12.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Tea canister</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R250.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+
+
+        <!--Box 3-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture13.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Stove Top Kattle</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R400.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+        <!--Box 3-->
+
+        <div class="box">
+            <div class="box-img">
+                <img src="C:\Users\Rolly\Desktop\utensils\Capture14.jpg" alt="">
+            </div>
+            <div class="title-price">
+                <h3>Serving bowls</h3>
+                <div class="stars">
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star' ></i>
+                    <i class='bx bxs-star-half' ></i>
+                </div>
+            </div>
+            <span>R1500.00</span>
+            <i class='bx bx-cart' ></i>
+        </div>
+    </div>
+</section>
+
+<!--About-->
+<section class="about" id="about">
+    <div class="about-img">
+        <img src="/img/about.jpg" alt="">
+    </div>
+    <div class="about-text">
+        <span>About Us</span>
+        <h2>Be inlove with <br> your Kitchen </h2>
+        <p>"Welcome to Kitchen Bliss, your premier destination for all things kitchen! Step into a world where culinary creativity meets practicality, where every meal is elevated by the finest tools and essentials. Whether you're a seasoned chef or an aspiring home cook, our curated collection of kitchen essentials is designed to inspire and empower your culinary adventures.
+
+            At Kitchen Bliss, we believe that the kitchen is the heart of every home, and we're here to help you make yours beat with passion and excitement. From the basics like knives and cookware to the latest gadgets and accessories, we've handpicked every item with quality, functionality, and style in mind.</p>
+            
+            <p>Browse through our carefully selected range, sourced from top brands and trusted suppliers, and discover the perfect tools to enhance your cooking experience. Whether you're whipping up a quick weekday dinner or preparing an elaborate feast for friends and family, you'll find everything you need right here.</p>
+            
+            <p>But we're more than just a store—we're a community of food lovers, constantly sharing tips, recipes, and inspiration to help you unleash your culinary potential. Join us on this delicious journey and let's create something extraordinary together.
+            
+            Welcome to the Kitchen Bliss family. Let's cook up something amazing!"</p>
+        <a href="#About Us" class="btn">Learn More</a>
+    </div>
+</section>
+<!--Brands-->
+<section class="delivery" id="delivery">
+    <div class="heading">
+        <span>Delivery</span>
+        <h3>Our Deliveries</h3>
+    </div>
+    <div class="brands-container">
+<br>
+        <p>At Kitchen Bliss, we strive to make your shopping experience as convenient as possible. Here's what you need to know about our delivery services:
+<br>
+<p><strong>Fast Shipping</strong>: We offer fast and reliable shipping options to get your kitchen essentials to you as quickly as possible. Depending on your location, you can expect your order to arrive within [7 working days].</p>
+  
+<p><strong></strong>Free Shipping</strong>: Enjoy free shipping on all orders over R300.00. No hidden fees, no surprises—just great products delivered to your doorstep at no extra cost.</p>
+
+<p><strong>Tracking</strong>: Once your order has been processed and shipped, you'll receive a tracking number via email so you can monitor its journey every step of the way.</p>
+
+<p><strong>International Shipping</strong>: We ship internationally to bring our premium kitchen essentials to customers around the globe. Please note that shipping times and fees may vary depending on your location.</p>
+
+<p><strong>Exceptional Packaging</strong>*: Rest assured that your items will be carefully packaged to ensure they arrive in pristine condition, ready to be put to use in your kitchen.</p>
+<br>
+<p>If you have any questions or special requests regarding delivery, feel free to [contact us](+27 69 997 3153) for assistance. Your satisfaction is our top priority, and we're here to help make sure your order arrives safely and on time.</p>
+        </p>
+    </div>
+</section>
+<section class="newsletter" id="contact">
+    <h2>Subscribe To Newsletter</h2>
+    <div class="news-box">
+        <input type="text" placeholder="Enter Your Email...">
+        <a href="#" class="btn">Subscribe</a>
+    </div>
+</section>
+ <!-- Footer -->
+ <section class="footer" id="footer">
+    <div class="footer-box">
+        <h2>Kitchen<span>Bliss</span></h2>
+        <p>Be inlove with your kitchen!</p>
+        <div class="social">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+        </div>
+    </div>
+    <div class="footer-box">
+        <h3>Services</h3>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Help & Support</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">FAQ</a></li>
+    </div>
+    <div class="footer-box">
+        <h3>Product</h3>
+        <li><a href="#">Tea cups</a></li>
+        <li><a href="#">Dinner set</a></li>
+        <li><a href="#">Cookingware</a></li>
+        <li><a href="#">Fancy glasses</a></li>
+    </div>
+    <div class="footer-box contact-info">
+        <h3>Contact</h3>
+        <span>Kagiso krugersdorp, 1754</span>
+        <span>+27 69 997 3153/ +27 69 362 8729</span>
+        <span>rolly@kitchenBliss.com</span>
+    </div>
+</section>
+<div class="copyright">
+    <p>&#169; Rolivhuwa Muzila All Right Reserved.</p>
+</div>
+
+    <!-- Link To JS -->
+    <script>
+        let menu = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    navbar.classList.toggle('active');
+}
+
+window.onscroll = () => {
+    navbar.classList.remove('active');
+}
+    </script>
+
+</body>
+</html>
